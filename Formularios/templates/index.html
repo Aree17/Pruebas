@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Lista de Ropa</h1>
+    <ul>
+        {% for ropa in ropas %}
+            <li>{{ ropa.nombre }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Agregar Ropa</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
